@@ -1,6 +1,6 @@
 // Prayer reminders (Android app only): schedules the next 7 days of prayer-time notifications.
 import {S} from './state.js';
-const LN=window.Capacitor?.isNativePlatform?.()?window.Capacitor.registerPlugin('LocalNotifications'):null;
+const LN=window.Capacitor?.Plugins?.LocalNotifications||null;
 export const supported=!!LN;
 const N=[['Fajr','الفجر'],['Dhuhr','الظهر'],['Asr','العصر'],['Maghrib','المغرب'],['Isha','العشاء']];
 const month=async(loc,method,y,m)=>{
